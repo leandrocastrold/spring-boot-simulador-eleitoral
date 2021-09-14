@@ -3,7 +3,6 @@ package com.leandro.eleitoral.services;
 import com.leandro.eleitoral.models.NotValidVote;
 import com.leandro.eleitoral.repositories.NotValidVoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -35,13 +34,13 @@ public class NotValidVoteService {
 
     public int getNullVotes() {
         NotValidVote notValidVote = notValidVoteRepository.findByName("nulo");
-        int amount = notValidVote.getVotes();
+        int amount = notValidVote != null ? notValidVote.getVotes() : 0;
         return  amount;
     }
 
     public int getBlankVotes() {
         NotValidVote notValidVote = notValidVoteRepository.findByName("branco");
-        int amount = notValidVote.getVotes();
+        int amount = notValidVote != null ? notValidVote.getVotes() : 0;
         return amount;
     }
 }

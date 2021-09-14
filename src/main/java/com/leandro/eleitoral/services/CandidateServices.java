@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CandidateServices {
@@ -102,7 +103,12 @@ public class CandidateServices {
     }
 
     public Integer getTotalValidVotes() {
-        return candidateRepository.getTotalVotes();
+        Optional<Integer> result = candidateRepository.getTotalVotes();
+        int amount = 0;
+        if (result.isPresent()) {
+           amount = result.get();
+        }
+        return amount;
     }
 
     public long getTotal() {
