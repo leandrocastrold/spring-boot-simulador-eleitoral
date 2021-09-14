@@ -4,6 +4,14 @@ Essa API REST é responsável por gerenciar candidatos e votos, simulando um sis
 
 Esse projeto faz parte do Simulador Eleitoral, que use React como Front-end.
 
+## UPDATE
+O banco de dados e a aplicação back-end estão configurados para rodar em containeres, utilizando o docker-compose do Docker.
+Para rodar a aplicação em ambientes isolados, execute o comando:
+
+```
+docker compose up --build
+```
+
 ## Instalação
 
 ```
