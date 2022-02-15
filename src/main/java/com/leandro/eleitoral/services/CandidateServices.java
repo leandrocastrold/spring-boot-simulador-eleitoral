@@ -42,10 +42,10 @@ public class CandidateServices {
         return candidate;
     };
 
-    public void create(CandidateDTO candidateDTO) {
+    public Candidate create(CandidateDTO candidateDTO) {
        Candidate candidate = conversorToCandidate(candidateDTO);
        System.out.println("CREATE: " + candidate);
-       candidateRepository.save(candidate);
+       return candidateRepository.save(candidate);
     }
 
     public void addVote (int id) throws CandidateNotFoundException {
